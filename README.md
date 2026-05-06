@@ -1,0 +1,1 @@
+# CasoRedesDeCinemas-06-05
