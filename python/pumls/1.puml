@@ -1,0 +1,14 @@
+@startuml
+actor Usuario
+
+participant "TelaCadastro" as Tela
+participant "Sistema" as Sistema
+participant "BancoDados" as BD
+
+Usuario -> Tela : preencherDados()
+Tela -> Sistema : enviarDados(dados)
+Sistema -> BD : insertUsuario(dados)
+BD --> Sistema : OK
+Sistema --> Tela : sucesso()
+Tela --> Usuario : mensagemSucesso()
+@enduml

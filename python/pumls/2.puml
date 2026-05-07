@@ -1,0 +1,19 @@
+@startuml
+actor Usuario
+
+participant "View\n(TelaCadastro)" as View
+participant "Controller\n(UsuarioController)" as Controller
+participant "Model\n(UsuarioService)" as Model
+participant "Repository\n(UsuarioRepository)" as Repo
+participant "Banco de Dados" as BD
+
+Usuario -> View : preencherDados()
+View -> Controller : cadastrarUsuario(dados)
+Controller -> Model : validarECriarUsuario(dados)
+Model -> Repo : salvar(usuario)
+Repo -> BD : INSERT usuario
+BD --> Repo : OK
+Repo --> Model : sucesso
+Model --> Controller : usuarioCriado
+Controller --> View : exibirSucesso()
+@enduml

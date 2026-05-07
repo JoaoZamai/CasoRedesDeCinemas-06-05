@@ -1,0 +1,13 @@
+@startuml
+actor Usuario
+
+participant "View" as View
+participant "ViewModel" as VM
+participant "Model" as Model
+
+Usuario -> View : interagir()
+View -> VM : atualizarPropriedade()
+VM -> Model : processarDados()
+Model --> VM : resultado
+VM --> View : notificarMudanca()
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+actor Usuario
+participant "TelaCadastro" as View
+participant "Banco de Dados" as BD
+
+Usuario -> View : preencherDados()
+View -> BD : INSERT usuario
+BD --> View : OK
+View --> Usuario : sucesso()
+@enduml

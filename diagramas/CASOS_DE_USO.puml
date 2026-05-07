@@ -1,0 +1,29 @@
+@startuml
+    left to right direction
+    actor Funcionário
+    actor Gerente 
+    actor Cliente
+    rectangle Sistema {
+        Funcionário --> (Cadastrar Cliente)
+        Funcionário --> (Ver Sessões em andamento)
+        Funcionário -->(Ver Filmes em Cartaz)
+        Funcionário --> (Ver Estoque)
+        Funcionário --> (Editar cadastro do cliente)
+    }
+
+    rectangle Gerência {
+        Gerente --> (Alterar Cadastro do Funcionário)
+    }
+
+    rectangle FinalUser {
+        Cliente --> (ver sessões em andamento)
+        Cliente --> (Comprar Ingresso)
+    }
+
+@enduml
+
+
+
+
+
+

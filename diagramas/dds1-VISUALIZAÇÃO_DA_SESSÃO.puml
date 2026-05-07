@@ -1,0 +1,22 @@
+@startuml
+    actor Funcionário
+
+    participant interface
+    participant programa
+
+
+    Funcionário -> interface : (Visualizar sessão específica)
+    interface -> programa : (busca por sessão especificada)
+    programa -> interface : (sessão x / filme y / andamento? s/n)
+    interface -> Funcionário : Informações
+
+    alt Sessão Inexistente
+        Funcionário -> interface : (Visualizar sessão específica)
+        interface -> programa : (busca por sessão especificada)
+        programa -> interface : Sessão inexistente
+    end
+
+
+
+
+@enduml

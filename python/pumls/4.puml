@@ -1,0 +1,13 @@
+@startuml
+actor Usuario
+
+participant "View" as View
+participant "Presenter" as Presenter
+participant "Service" as Model
+
+Usuario -> View : clicarSalvar()
+View -> Presenter : onSalvar(dados)
+Presenter -> Model : cadastrarUsuario(dados)
+Model --> Presenter : sucesso
+Presenter -> View : mostrarMensagem()
+@enduml
